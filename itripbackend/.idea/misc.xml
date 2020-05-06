@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/itrip-auth" />
+    <file type="web" url="file://$PROJECT_DIR$/itrip-auths" />
     <file type="web" url="file://$PROJECT_DIR$/itrip-biz" />
     <file type="web" url="file://$PROJECT_DIR$/itrip-search" />
     <file type="web" url="file://$PROJECT_DIR$/itrip-trade" />
@@ -19,7 +20,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

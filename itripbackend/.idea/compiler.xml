@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="itrip-auth" />
+        <module name="itrip-auths" />
         <module name="itrip-beans" />
         <module name="itrip-biz" />
         <module name="itrip-dao" />
