@@ -25,6 +25,7 @@ public class EmailServiceImpl implements EmailService{
         simpleMailMessage.setText("注册邮箱"+userCode+"激活码"+activeCode);
         mailSender.send(simpleMailMessage);
         System.out.println("text"+simpleMailMessage.getText());
-        stringRedisTemplate.opsForValue().set("actCodeMail"+userCode,activeCode,30*60, TimeUnit.SECONDS);
+        redisUtils.setValueExpire("actCodeMail"+userCode,activeCode,30*60);
+//        stringRedisTemplate.opsForValue().set("actCodeMail"+userCode,activeCode,30*60, TimeUnit.SECONDS);
     }
 }

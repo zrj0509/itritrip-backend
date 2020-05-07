@@ -23,13 +23,13 @@
 	<!--加载属性文件-->
 	<context:property-placeholder location="classpath:database.properties,classpath:sms.properties"/>
 
-	<!--<bean name="systemConfig" class="cn.itrip.common.SystemConfig">-->
-	<!--<property name="smsAccountSid" value="${sms.accountSid}" />-->
-	<!--<property name="smsAuthToken" value="${sms.authToken}" />-->
-	<!--<property name="smsAppID" value="${sms.appID}" />-->
-	<!--<property name="smsServerIP" value="${sms.serverIP}" />-->
-	<!--<property name="smsServerPort" value="${sms.serverPort}" />-->
-	<!--</bean>-->
+	<bean name="systemConfig" class="org.itrip.common.SystemConfig">
+	<property name="smsAccountSid" value="${sms.accountSid}" />
+	<property name="smsAuthToken" value="${sms.authToken}" />
+	<property name="smsAppID" value="${sms.appID}" />
+	<property name="smsServerIP" value="${sms.serverIP}" />
+	<property name="smsServerPort" value="${sms.serverPort}" />
+	</bean>
 
 	<!--数据源-->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">

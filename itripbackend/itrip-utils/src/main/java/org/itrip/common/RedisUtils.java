@@ -2,12 +2,13 @@ package org.itrip.common;
 
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+import javax.annotation.Resource;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class RedisUtils {
-    public StringRedisTemplate stringRedisTemplate;
-
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
     public RedisUtils() {
     }
 
@@ -100,10 +101,7 @@ public class RedisUtils {
     public boolean exit(String key){
         return  stringRedisTemplate.hasKey(key);
     }
-
     public long getTll(String key){
         return stringRedisTemplate.getExpire(key);
     }
-
-
 }

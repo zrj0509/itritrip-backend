@@ -35,5 +35,8 @@
         <property name="connectionFactory" ref="connectionFactory"/>
     </bean>
     <!--redis工具对象-->
-    <bean id="redisUtils" class="org.itrip.common.RedisUtils"/>
+    <bean id="redisUtils" class="org.itrip.common.RedisUtils">
+        <constructor-arg ref="stringRedisTemplate"/>
+    </bean>
+    <bean id="systemConfig" class="org.itrip.common.SystemConfig"/>
 </beans>

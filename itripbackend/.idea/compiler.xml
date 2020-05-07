@@ -16,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="house" target="1.8" />
       <module name="itrip-auth" target="1.7" />
     </bytecodeTargetLevel>
   </component>

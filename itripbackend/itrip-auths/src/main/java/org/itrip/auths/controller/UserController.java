@@ -3,12 +3,10 @@ package org.itrip.auths.controller;
 import org.itrip.auths.service.UserService;
 import org.itrip.common.DtoUtil;
 import org.itrip.common.ErrorCode;
+import org.itrip.common.RedisUtils;
 import org.itrip.dto.Dto;
 import org.itrip.vo.userinfo.ItripUserVO;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -23,6 +21,40 @@ public class UserController {
         try {
             if(!userService.validateEmail(vo.getUserCode())){
                 return DtoUtil.returnFail("邮箱格式不正确,请重新输入", ErrorCode.AUTH_ILLEGAL_USERCODE);
+            }
+
+            //2.添加用户
+            return userService.itriptxAddItripUser(vo);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("服务器未响应",ErrorCode.AUTH_UNKNOWN);
+        }
+    }
+    @RequestMapping(value = "/doactive" ,method = RequestMethod.PUT,produces = "application/json")
+    public Dto doactive(@RequestParam("userCode") String userCode, @RequestParam("code") String code){
+        try {
+            return userService.active(userCode,code);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("服务器未响应",ErrorCode.AUTH_UNKNOWN);
+        }
+    }
+    @RequestMapping(value = "/doactivePhone" ,method = RequestMethod.PUT,produces = "application/json")
+    public Dto doactivePhone(@RequestParam("userCode") String userCode, @RequestParam("code") String code){
+        try {
+            return userService.activePhone(userCode,code);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("服务器未响应",ErrorCode.AUTH_UNKNOWN);
+        }
+    }
+    @RequestMapping(value = "/doregisterbyphone" ,method = RequestMethod.POST,produces = "application/json")
+    public Dto doRegisterByPhone(@RequestBody ItripUserVO vo){
+        //1.手机格式验证
+        try {
+            if(!userService.validatePhone(vo.getUserCode())){
+                return DtoUtil.returnFail("手机格式不正确,请重新输入", ErrorCode.AUTH_ILLEGAL_USERCODE);
             }
 
             //2.添加用户
