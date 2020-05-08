@@ -1,5 +1,6 @@
 package org.itrip.auths.controller;
 
+import org.apache.ibatis.cache.NullCacheKey;
 import org.itrip.auths.service.UserService;
 import org.itrip.common.DtoUtil;
 import org.itrip.common.ErrorCode;
@@ -9,6 +10,7 @@ import org.itrip.vo.userinfo.ItripUserVO;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api")
@@ -61,6 +63,19 @@ public class UserController {
             return userService.itriptxAddItripUser(vo);
 
         } catch (Exception e) {
+            e.printStackTrace();
+            return DtoUtil.returnFail("服务器未响应",ErrorCode.AUTH_UNKNOWN);
+        }
+    }
+    @RequestMapping(value = "doLogout" ,method = RequestMethod.GET,produces = "application/json")
+    public Dto doLogout(HttpServletRequest request){
+        try {
+            String token=request.getHeader("token");
+            String userAgent=request.getHeader("user-agent");
+            System.out.println("token==="+token);
+            System.out.println("agent==="+userAgent);
+            return userService.doLogout(token,userAgent);
+        }catch (Exception e){
             e.printStackTrace();
             return DtoUtil.returnFail("服务器未响应",ErrorCode.AUTH_UNKNOWN);
         }

@@ -156,4 +156,20 @@ public class UserServiceImpl implements UserService{
             return DtoUtil.returnFail("用户名或密码不正确!",ErrorCode.AUTH_PARAMETER_ERROR);
         }
     }
+
+    @Override
+    public Dto doLogout(String token, String userAgent) {
+        //1.redis中查找这个token是否存在
+        if(!redisUtils.exit(token)){
+            return DtoUtil.returnFail("token不存在!",ErrorCode.AUTH_TOKEN_INVALID);
+        }
+        //2.判断非法截取token--》6位随机数
+        String tokens[]=token.split("-");
+        if(!tokens[4].equals(MD5.getMd5(userAgent,6))){
+            return DtoUtil.returnFail("token无效!",ErrorCode.AUTH_TOKEN_INVALID);
+        }
+        //3.直接从redis中删除
+        redisUtils.del(token);
+        return DtoUtil.returnSuccess("注销成功！");
+    }
 }

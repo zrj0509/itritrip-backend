@@ -12,4 +12,6 @@ public interface UserService {
     boolean validatePhone(String phone) throws Exception;
     public Dto activePhone(String userCode,String code) throws Exception;
     Dto doLogin(String name, String psw, String userAgent) throws Exception;
+
+    Dto doLogout(String token, String userAgent)throws Exception;
 }
