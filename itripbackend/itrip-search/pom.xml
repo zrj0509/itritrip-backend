@@ -35,6 +35,13 @@
             <artifactId>itrip-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--spring-solr整合包-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-solr -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-solr</artifactId>
+            <version>1.5.5.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
