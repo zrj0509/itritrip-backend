@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-auth" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-beans" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-biz" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-dao" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-search" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-trade" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-utils" charset="UTF-8" />
     <file url="file://$USER_HOME$/Documents/Tencent Files/1640254227/FileRecv/ssm_house/ssm_house/house" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/itrip-auths" charset="UTF-8" />

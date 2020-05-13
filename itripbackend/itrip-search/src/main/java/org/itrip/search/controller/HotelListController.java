@@ -36,7 +36,7 @@ public class HotelListController {
         }
     }
     @RequestMapping(value = "/searchItripHotelListByHotCity",method = RequestMethod.POST,produces = "application/json")
-    public Dto searchItripHotelListByHotCity (@RequestBody SearchHotCityVO vo){
+    public Dto<Page<ItripHotelVO>> searchItripHotelListByHotCity (@RequestBody SearchHotCityVO vo){
 
         try {
             //判断城市id是否为空
@@ -48,8 +48,7 @@ public class HotelListController {
                 return DtoUtil.returnFail("数目不能为空！","20005");
             }
             //调用业务处理
-            Page page =searchService.searchItripHotelListByHotCity(vo);
-            return DtoUtil.returnDataSuccess(page);
+            return DtoUtil.returnDataSuccess(searchService.searchItripHotelListByHotCity(vo));
         }catch (Exception ex){
             ex.printStackTrace();
             return DtoUtil.returnFail("系统异常！","20003");

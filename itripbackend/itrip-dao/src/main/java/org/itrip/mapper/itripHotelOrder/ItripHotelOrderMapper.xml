@@ -391,4 +391,32 @@
     <delete id="deleteItripHotelOrderById" parameterType="Long">
         delete from itrip_hotel_order where id = #{id}
     </delete>
+
+    <!-- 调用存储过程，进行实时库存表的纪录刷新 -->
+    <update id="flushRoomStore" parameterType="java.util.Map" statementType="CALLABLE">
+        {
+          call pre_flush_store(
+            #{startTime,jdbcType=DATE,mode=IN},#{endTime,jdbcType=DATE,mode=IN},
+            #{roomId,jdbcType=BIGINT,mode=IN},#{hotelId,jdbcType=BIGINT,mode=IN}
+          )
+        }
+    </update>
+
+    <select id="queryRoomStore" parameterType="java.util.Map" resultType="org.itrip.pojo.ItripHotelTempStore">
+        select s.roomId,s.recordDate,s.store-(
+            CASE
+            when sum(o.count) is NULL
+            then 0
+            else
+            SUM(o.count)
+            end
+        ) as store
+        from itrip_hotel_temp_store s
+        left JOIN itrip_hotel_order o on s.roomId = o.roomId and o.orderStatus=0
+        and s.recordDate BETWEEN DATE_FORMAT(o.checkInDate,'%Y-%m-%d') and DATE_FORMAT(o.checkOutDate,'%Y-%m-%d')
+        where s.roomId=#{roomId}
+        and s.recordDate BETWEEN DATE_FORMAT(#{startTime},'%Y-%m-%d') and DATE_FORMAT(#{endTime},'%Y-%m-%d')
+        GROUP BY s.roomId,s.recordDate
+        order by store asc;
+    </select>
 </mapper>

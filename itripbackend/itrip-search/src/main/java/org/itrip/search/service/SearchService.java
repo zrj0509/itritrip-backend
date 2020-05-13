@@ -10,5 +10,5 @@ import java.util.List;
 public interface SearchService {
     Page SearchItripHotelPage(SearchHotelVO vo) throws Exception;
 
-    Page searchItripHotelListByHotCity(SearchHotCityVO vo);
+    List<ItripHotelVO> searchItripHotelListByHotCity(SearchHotCityVO vo) throws Exception;
 }

@@ -1,6 +1,9 @@
 package org.itrip.mapper.itripHotelOrder;
 import org.itrip.pojo.ItripHotelOrder;
 import org.apache.ibatis.annotations.Param;
+import org.itrip.pojo.ItripHotelTempStore;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,4 +21,7 @@ public interface ItripHotelOrderMapper {
 
 	public Integer deleteItripHotelOrderById(@Param(value = "id") Long id)throws Exception;
 
+	public void flushRoomStore(Map<String,Object> param)throws Exception;
+
+	List<ItripHotelTempStore> queryRoomStore(HashMap<String, Object> param);
 }

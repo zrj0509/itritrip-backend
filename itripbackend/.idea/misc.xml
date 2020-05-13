@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-auth" />
+    <file type="web" url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-biz" />
+    <file type="web" url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-search" />
+    <file type="web" url="file://$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-trade" />
     <file type="web" url="file://$USER_HOME$/Documents/Tencent Files/1640254227/FileRecv/ssm_house/ssm_house/house" />
     <file type="web" url="file://$PROJECT_DIR$/itrip-auth" />
     <file type="web" url="file://$PROJECT_DIR$/itrip-auths" />
@@ -13,10 +17,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-beans/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-biz/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-dao/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-search/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-trade/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/itrip-utils/pom.xml" />
+        <option value="$USER_HOME$/Desktop/学习记录/itrip-backend/itrip-backend/pom.xml" />
         <option value="$PROJECT_DIR$/itrip-auth/pom.xml" />
       </set>
     </option>

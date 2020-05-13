@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -18,6 +19,13 @@
     <bytecodeTargetLevel>
       <module name="house" target="1.8" />
       <module name="itrip-auth" target="1.7" />
+      <module name="itrip-backend (1) (org.itrip)" target="1.5" />
+      <module name="itrip-beans (1) (org.itrip)" target="1.7" />
+      <module name="itrip-biz (1) (org.itrip)" target="1.7" />
+      <module name="itrip-dao (1) (org.itrip)" target="1.7" />
+      <module name="itrip-search (1) (org.itrip)" target="1.7" />
+      <module name="itrip-trade (1) (org.itrip)" target="1.7" />
+      <module name="itrip-utils (1) (org.itrip)" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

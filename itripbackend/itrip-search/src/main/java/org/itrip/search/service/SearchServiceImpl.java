@@ -117,33 +117,21 @@ public class SearchServiceImpl implements SearchService{
     }
 
     @Override
-    public Page searchItripHotelListByHotCity(SearchHotCityVO vo) {
+    public  List<ItripHotelVO> searchItripHotelListByHotCity(SearchHotCityVO vo) {
         System.out.println("cityId==="+vo.getCityId());
         //创建query查询对象
         Query query =new SimpleQuery("*:*");
         Criteria criteria =new Criteria("cityId");
         //判断
         if (!StringUtils.isEmpty(String.valueOf(vo.getCityId()))){
-//            criteria=criteria.contains(String.valueOf(vo.getCityId()));
             criteria.is(vo.getCityId());
         }
-        //分页
-        //当前页1
-        int pageNo= Constants.DEFAULT_PAGE_NO;
-        //每页显示的个数 10
-        int pageSize= Constants.DEFAULT_PAGE_SIZE;
-        //设置当前第一页///////
-        query.setOffset((pageNo-1)*pageSize);
-        query.setRows(pageSize);
-        //9.添加条件对象
+        query.setRows(vo.getCount());
         query.addCriteria(criteria);
         //10.模板查询
         ScoredPage<ItripHotelVO> vos= solrTemplate.queryForPage(query, ItripHotelVO.class);
-        //11.Page封装对象
-        Page page =new Page(pageNo,pageSize,new Long(vos.getTotalElements()).intValue());
-        //12.设置列表List
-        page.setRows(vos.getContent());
-        return page;
+        List<ItripHotelVO> list=vos.getContent();
+        return list;
     }
 
 }
