@@ -39,5 +39,7 @@
         <constructor-arg ref="stringRedisTemplate"/>
     </bean>
     <bean id="systemConfig" class="org.itrip.common.SystemConfig"/>
-    <bean id="validationToken" class="org.itrip.common.ValidationToken"/>
+    <bean id="validationToken" class="org.itrip.common.ValidationToken">
+        <property name="redisUtil" ref="redisUtils"/>
+    </bean>
 </beans>
