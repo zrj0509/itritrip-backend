@@ -1,4 +1,5 @@
 package org.itrip.biz.service.itripHotel;
+import org.itrip.dto.Dto;
 import org.itrip.pojo.ItripHotel;
 import java.util.List;
 import java.util.Map;
@@ -24,4 +25,8 @@ public interface ItripHotelService {
     public Integer itriptxDeleteItripHotelById(Long id)throws Exception;
 
     public Page<ItripHotel> queryItripHotelPageByMap(Map<String, Object> param, Integer pageNo, Integer pageSize)throws Exception;
+
+    Dto findHotCity(Integer type)throws Exception;
+
+    Dto findTradeArea(Integer cityId)throws Exception;
 }
