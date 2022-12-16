@@ -24,7 +24,7 @@
         <cas.client.core.version>3.4.1</cas.client.core.version>
         <version.jackson>2.4.4</version.jackson>
         <jackson.verson>2.8.7</jackson.verson>
-        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
     </properties>
 
     <dependencies>
